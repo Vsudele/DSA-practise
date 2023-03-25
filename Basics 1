@@ -1,0 +1,31 @@
+Write a Program which accepts coefficients of a quadratic equation from the user and displays the roots (both real and complex roots depending upon the discriminant).
+
+#include<cmath>
+using namespace std;
+
+int main()
+{
+   int a,b,c;
+   float D, r1,r2;
+   cout<<"Enter the coefficients:";
+   cin>>a>>b>>c;
+   D= pow(b,2)- (4*a*c);
+   if(D>0){
+   r1= (-b + sqrt(D)) / (2*a);
+   r2= (-b - sqrt(D)) / (2*a);
+   cout<<r1<<r2<<endl;
+   }
+   else if(D==0){
+       r1= (-b)/(2*a);
+       cout<<"r1=r1"<<r1;
+   }
+   else{
+       int realPart = -b/(2*a);
+        int imaginaryPart =sqrt(-D)/(2*a);
+        cout << "x1 = " << realPart << "+" << imaginaryPart << "i" << endl;
+        cout << "x2 = " << realPart << "-" << imaginaryPart << "i" << endl;
+   }
+   
+   
+   return 0;
+}
